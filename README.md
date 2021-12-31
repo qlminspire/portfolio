@@ -52,3 +52,10 @@
 Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
 
 [<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+
+
+## TO-DO
+
+- [ ] Fill portfolio
+- [ ] Move portfolio data to markdown
+- [ ] Make portfolio interface responsive (fit well for mobile, tablet)
