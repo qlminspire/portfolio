@@ -11,99 +11,9 @@ import GlobalStyle from '../styles/globalStyles';
 import FontStyles from '../styles/fontStyles';
 
 import { PortfolioWorkExperience } from '../components/portfolio/work-experience/work-experience.component';
-import {
-  SocialFixedLeft,
-} from '../components/social/social.styled';
+import { SocialLinks } from '../components/social/social.styled';
 
-const metadata = {
-  name: 'Vladislav Karpovich',
-  tags: ['.Net Developer', 'Brest, Belarus'],
-  social: {
-    email: 'vladislav.karpovich.work@gmail.com',
-    linkedin: 'https://www.linkedin.com/in/vladislav-karpovich-33b835192/',
-    github: 'https://github.com/qlminspire',
-  },
-  summary: `Experienced Full-Stack Developer with over 4 years work in Web
-  Development. Curious in developing beautifull things and tend to make
-  the World Wide Web better. Interested in Productivity, Healthcare and
-  Crypto areas.`,
-  skills: ['.NET', 'C#', 'React', 'HTML', 'CSS', 'Javascript', 'SQL'],
-  languages: [
-    { language: 'Russian', level: 'Native' },
-    { language: 'English', level: 'Pre-Intermediate' },
-  ],
-  education: [
-    {
-      date: 'August, 2017 - October, 2017',
-      place: 'EPAM',
-      position: 'Trainee (.NET)',
-      summary: '',
-    },
-    {
-      date: 'September, 2014 - June, 2018',
-      place: 'Brest State Technical University',
-      position: 'Bachelor (Information technologies Engineer)',
-      summary: 'Automated systems of data processing',
-    },
-  ],
-  experience: [
-    {
-      date: 'November, 2020 - November, 2021',
-      place: 'Military Academy of Belarus',
-      position: 'Software Developer',
-      project: {
-        summary:
-          'Desing and development modules for military targeted desktop application based on WinForms.',
-        area: 'Military',
-        team: '3 Developers',
-        technologies: ['WinForms'],
-        responsibilities: [
-          'Communication with customers',
-          'Design',
-          'Development',
-          'Release',
-        ],
-      },
-    },
-    {
-      date: 'March, 2019 - November, 2020',
-      place: 'EPAM',
-      position: 'Software Developer',
-      project: {
-        summary: `Part of Platform team on huge ASP.NET web-application in lawyalty.Design, migration and refactoring
-        messaging system based on NServiceBus.Working with messaging, data integrity, database instructions and
-        production bugs.`,
-        area: 'Lawyalty',
-        team: '15+ Developers, 2 QA',
-        technologies: [],
-        responsibilities: [],
-      },
-    },
-    {
-      date: 'October, 2017 - March, 2019',
-      place: 'EPAM',
-      position: 'Junior Software Developer',
-      project: {
-        summary: `Document management application for bank system.`,
-        area: 'Bank, Finance',
-        team: '3 Developers, 2 QA, BA',
-        technologies: [
-          '.NET API',
-          'Entity Framework 6',
-          'WinForms',
-          'React',
-          'Typescript',
-        ],
-        responsibilities: [
-          'Design and development WinForms application',
-          'Design and development React + TS application',
-          'Communication with customer',
-          'UI Design decisions',
-        ],
-      },
-    },
-  ],
-};
+import { PORTFOLIO_METADATA as metadata } from '../data/portfolio-metadata';
 
 const IndexPage = () => {
   const {
@@ -123,12 +33,14 @@ const IndexPage = () => {
       <FontStyles />
       <GlobalStyle />
       <title>{`${name} - Portfolio`}</title>
-      <PortfolioHeader name={name} tags={tags} />
-      <SocialFixedLeft
-        emailUrl={email}
-        linkedInUrl={linkedin}
-        githubUrl={github}
-      ></SocialFixedLeft>
+      <PortfolioHeader name={name} tags={tags}>
+        <SocialLinks
+          emailUrl={email}
+          linkedInUrl={linkedin}
+          githubUrl={github}
+        ></SocialLinks>
+      </PortfolioHeader>
+
       {summary ? (
         <PortfolioSection title='Summary'>
           <Paragraph>{summary}</Paragraph>
@@ -136,7 +48,7 @@ const IndexPage = () => {
       ) : null}
       {skills ? (
         <PortfolioSection title='Skills'>
-          <Flexbox>
+          <Flexbox gap={8}>
             {skills.map((skill) => (
               <Tag key={skill}>{skill}</Tag>
             ))}
@@ -145,7 +57,7 @@ const IndexPage = () => {
       ) : null}
       {languages ? (
         <PortfolioSection title='Languages'>
-          <Flexbox>
+          <Flexbox gap={8}>
             {languages.map(({ language, level }) => (
               <Tag key={language}>
                 <Paragraph>{language}</Paragraph>
@@ -157,7 +69,7 @@ const IndexPage = () => {
       ) : null}
       {education ? (
         <PortfolioSection title='Education'>
-          <Flexbox>
+          <Flexbox flow='column' gap={16}>
             {education.map(({ summary, ...otherProps }) => (
               <PortfolioExperience key={otherProps.date} {...otherProps}>
                 {summary}
@@ -168,7 +80,7 @@ const IndexPage = () => {
       ) : null}
       {experience ? (
         <PortfolioSection title='Experience'>
-          <Flexbox flow='column'>
+          <Flexbox flow='column' gap={16}>
             {experience.map(({ project, ...otherProps }) => (
               <PortfolioWorkExperience
                 key={otherProps.date}

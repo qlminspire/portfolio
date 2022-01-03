@@ -1,6 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+  ul{
+    margin:0;
+  }
+
   body {
     background: #f8f9eb;
     color: #424242;

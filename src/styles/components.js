@@ -24,5 +24,6 @@ export const Tag = styled.span `
 export const Flexbox = styled.div `
     display: flex;
     flex-flow: ${({ flow }) => flow === "column" ? "column;" : "row;"};
-    gap: ${({ gap }) => !gap ? "8px" : gap };
+    flex-wrap: wrap;
+    gap: ${({ gap }) => !gap ? "8px;" : `${gap}px;` };
 `;
