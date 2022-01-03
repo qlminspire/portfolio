@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { Helmet } from 'react-helmet';
+
 import { PortfolioHeader } from '../components/portfolio/header/header.component';
 import { PortfolioSection } from '../components/portfolio/section/portfolio-section.component';
 import { Layout } from '../components/layout/layout.component';
@@ -16,7 +18,8 @@ import { PORTFOLIO_METADATA as metadata } from '../data/portfolio-metadata';
 const IndexPage = () => {
   const {
     name,
-    tags,
+    position,
+    region,
     social,
     summary,
     skills,
@@ -26,9 +29,14 @@ const IndexPage = () => {
   } = metadata;
 
   const { email, linkedin, github } = social;
+
+  const tags = [ position, region ];
+
   return (
     <Layout>
-      <title>{`${name} - Portfolio`}</title>
+      <Helmet>
+        <title>{`${name} - ${position}`}</title>s
+      </Helmet>
       <PortfolioHeader name={name} tags={tags}>
         <SocialLinks
           emailUrl={email}

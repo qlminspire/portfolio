@@ -1,6 +1,7 @@
 export const PORTFOLIO_METADATA = {
   name: 'Vladislav Karpovich',
-  tags: ['Full Stack Developer', 'Brest, Belarus'],
+  position: 'Full Stack Developer',
+  region: 'Brest, Belarus',
   social: {
     email: 'vladislav.karpovich.work@gmail.com',
     linkedin: 'https://www.linkedin.com/in/vladislav-karpovich-33b835192/',
@@ -13,7 +14,7 @@ export const PORTFOLIO_METADATA = {
   skills: ['.NET', 'C#', 'React', 'HTML', 'CSS', 'Javascript', 'SQL'],
   languages: [
     { language: 'Russian', level: 'Native' },
-    { language: 'English', level: 'Pre-Intermediate' },
+    { language: 'English', level: 'Intermediate' },
   ],
   education: [
     {
