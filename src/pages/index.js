@@ -2,13 +2,11 @@ import * as React from 'react';
 
 import { PortfolioHeader } from '../components/portfolio/header/header.component';
 import { PortfolioSection } from '../components/portfolio/section/portfolio-section.component';
-import { Layout } from '../components/layout/layout.styled';
+import { Layout } from '../components/layout/layout.component';
 import { PortfolioExperience } from '../components/portfolio/experience/experience.component';
 
 import { Flexbox, Tag } from '../styles/components';
 import { Paragraph, Small } from '../styles/typography';
-import GlobalStyle from '../styles/globalStyles';
-import FontStyles from '../styles/fontStyles';
 
 import { PortfolioWorkExperience } from '../components/portfolio/work-experience/work-experience.component';
 import { SocialLinks } from '../components/social/social.styled';
@@ -30,8 +28,6 @@ const IndexPage = () => {
   const { email, linkedin, github } = social;
   return (
     <Layout>
-      <FontStyles />
-      <GlobalStyle />
       <title>{`${name} - Portfolio`}</title>
       <PortfolioHeader name={name} tags={tags}>
         <SocialLinks
