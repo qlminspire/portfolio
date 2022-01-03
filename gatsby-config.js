@@ -1,7 +1,8 @@
 module.exports = {
+  pathPrefix: "/neufolio",
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "Portfolio",
+    siteUrl:"https://www.yourdomain.tld",
+    title: "Vladislav Karpovich - Full Stack Developer",
   },
   plugins: [
     "gatsby-plugin-styled-components",
