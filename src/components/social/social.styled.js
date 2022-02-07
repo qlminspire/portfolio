@@ -18,5 +18,6 @@ export const SocialLinks = styled(Social) `
         width:120px;
         flex-direction: row;
         height:40px;
+        left:0;
     }
 `;

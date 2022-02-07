@@ -1,5 +1,7 @@
 import styled, {css} from 'styled-components';
 
+import { ColorSettings } from './globalStyles';
+
 const commonHeadingStyles = css`
     margin: 0 0 12px 0;
     font-family: 'The Next', sans-serif;
@@ -22,7 +24,7 @@ export const Paragraph = styled.p `
 
 export const Small = styled.span`
     font-size:11px;
-    color: #353535;
+    color: ${ColorSettings.fontOptionalColor};
 `;
 
 export const Bold = styled.span `
