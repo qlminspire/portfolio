@@ -35,7 +35,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <Helmet>
-        <title>{`${name} - ${position}`}</title>s
+        <title>{`${name} - ${position}`}</title>
       </Helmet>
       <PortfolioHeader name={name} tags={tags}>
         <SocialLinks

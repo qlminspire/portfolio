@@ -16,8 +16,9 @@ export const Section = styled.section `
     ${neumorphismBoxesStyles}
 `;
 
-export const Tag = styled.span `
+export const Tag = styled.div `
     padding: 7px 14px;
+    display: inline-block;
     ${neumorphismBoxesStyles}
 `;
 
