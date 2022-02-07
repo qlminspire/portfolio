@@ -15,6 +15,8 @@ import { SocialLinksFixed, SocialContainer } from '../components/social/social.s
 
 import { PORTFOLIO_METADATA as metadata } from '../data/portfolio-metadata';
 
+import portfolioFilePath from "../assets/Uladzislau Karpovich - Full Stack Developer, Brest.pdf";
+
 const IndexPage = () => {
   const {
     name,
@@ -42,6 +44,7 @@ const IndexPage = () => {
           emailUrl={email}
           linkedInUrl={linkedin}
           githubUrl={github}
+          portfolioUrl={portfolioFilePath}
         ></SocialLinksFixed>
       </PortfolioHeader>
       <OptionalPortfolioSection title='Summary' data={summary}>
@@ -92,6 +95,7 @@ const IndexPage = () => {
           emailUrl={email}
           linkedInUrl={linkedin}
           githubUrl={github}
+          portfolioUrl={portfolioFilePath}
         ></SocialContainer>
       </OptionalPortfolioSection>
     </Layout>
