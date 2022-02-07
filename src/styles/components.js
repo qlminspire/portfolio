@@ -2,7 +2,7 @@ import styled, {
     css
 } from 'styled-components';
 
-const neumorphismBoxesStyles = css `
+export const neumorphismBoxesStyles = css `
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-sizing: border-box;
     box-shadow: -6px -6px 12px rgba(255, 255, 255, 0.5), 6px 6px 12px rgba(209, 205, 199, 0.5);

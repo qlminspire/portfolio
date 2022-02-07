@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { PortfolioExperience } from '../experience/experience.component';
-import { OptionalParagraph } from '../../typography/optional-paragraph.component';
+import { Paragraph, Bold } from '../../../styles/typography';
+import { withOptional } from '../../optional/with-optional.component';
 
 export const PortfolioWorkExperience = ({
   date,
@@ -10,35 +11,34 @@ export const PortfolioWorkExperience = ({
   project: { summary, area, team, technologies, responsibilities, challenges },
 }) => (
   <PortfolioExperience key={date} date={date} place={place} position={position}>
-    <OptionalParagraph title='Project Summary'>{summary}</OptionalParagraph>
-    <OptionalParagraph title='Area'>{area}</OptionalParagraph>
-    <OptionalParagraph title='Team'>{team}</OptionalParagraph>
-    {technologies && technologies.length ? (
-      <OptionalParagraph title='Technologies'>
-        <ul>
-          {technologies.map((technology) => (
-            <li key={technology}>{technology}</li>
-          ))}
-        </ul>
-      </OptionalParagraph>
-    ) : null}
-    {responsibilities && responsibilities.length ? (
-      <OptionalParagraph title='Responsibilities'>
-        <ul>
-          {responsibilities.map((responsibility) => (
-            <li key={responsibility}>{responsibility}</li>
-          ))}
-        </ul>
-      </OptionalParagraph>
-    ) : null}
-    {challenges && challenges.length ? (
-      <OptionalParagraph title='Challenges'>
-        <ul>
-          {challenges.map((challenge) => (
-            <li key={challenge}>{challenge}</li>
-          ))}
-        </ul>
-      </OptionalParagraph>
-    ) : null}
+    <OptionalExperienceField title='Project Summary' data={summary} />
+    <OptionalExperienceField title='Area' data={area} />
+    <OptionalExperienceField title='Team' data={team} />
+    <OptionalExperienceListField title='Technologies' data={technologies} />
+    <OptionalExperienceListField
+      title='Responsibilities'
+      data={responsibilities} />
+    <OptionalExperienceListField title='Challenges' data={challenges} />
   </PortfolioExperience>
 );
+
+const ExperienceField = ({ title, data }) => (
+  <Paragraph>
+    <Bold>{title}</Bold>: {data}
+  </Paragraph>
+);
+
+const OptionalExperienceField = withOptional(ExperienceField);
+
+const ExperienceListField = ({ title, data }) => (
+  <section>
+    <Bold>{title}</Bold>:
+    <ul>
+      {data && data.length ? data.map((item) => (
+        <li key={item}>{item}</li>
+      )) : null}
+    </ul>
+  </section>
+);
+
+const OptionalExperienceListField = withOptional(ExperienceListField);

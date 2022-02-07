@@ -4,12 +4,34 @@ import {
     Social
 } from './social.component';
 
-export const SocialLinks = styled(Social) `
-    position: fixed;
+import { neumorphismBoxesStyles } from '../../styles/components';
+
+export const SocialContainer = styled(Social)`
     display: flex;
     justify-content: space-evenly;
+    width:120px;
+    padding:2px;
+
+    li{
+        list-style:none;
+
+        display: inline-flex;
+        align-items: center;
+
+        a{
+            display: inline-flex;
+            align-items: center;
+        }
+    }
+`;
+
+export const SocialLinksFixed = styled(SocialContainer) `
+    ${neumorphismBoxesStyles}
+    position: fixed;
     flex-direction: column;
+    align-items:center;
     height: 120px;
+    width: 42px;
     top: 50%;
     left: 30px;
 
@@ -17,7 +39,8 @@ export const SocialLinks = styled(Social) `
         position: relative;
         width:120px;
         flex-direction: row;
-        height:40px;
+        height:auto;
         left:0;
+        top:0;
     }
 `;
