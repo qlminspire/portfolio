@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import { Section } from '../../../styles/components';
-import { Paragraph } from '../../../styles/typography';
+import { Section } from "../../../styles/components";
+import { Paragraph } from "../../../styles/typography";
 
-import { ExperienceBody, ExperienceHeader } from './experience.styled';
+import { ExperienceBody, ExperienceHeader } from "./experience.styled";
 
 export const PortfolioExperience = ({ date, place, position, children }) => (
   <Section>

@@ -1,13 +1,13 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const ExperienceHeader = styled.header`
-    font-weight:600;
+  font-weight: 600;
 `;
 
 export const ExperienceBody = styled.section`
-    margin-top: 8px;
+  margin-top: 8px;
 
-    &:not(:last-child){
-        margin-bottom: 24px;
-    }
-`
+  &:not(:last-child) {
+    margin-bottom: 24px;
+  }
+`;

@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import { Flexbox, Section, Tag } from '../../../styles/components';
-import { H1 } from '../../../styles/typography';
+import { Flexbox, Section, Tag } from "../../../styles/components";
+import { H1 } from "../../../styles/typography";
 
 export const PortfolioHeader = ({ name, tags, children }) => (
   <Section>

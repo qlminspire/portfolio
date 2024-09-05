@@ -1,19 +1,22 @@
-import * as React from 'react';
+import * as React from "react";
 
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 
-import { PortfolioHeader } from '../components/portfolio/header/header.component';
-import { OptionalPortfolioSection } from '../components/portfolio/section/portfolio-section.component';
-import { Layout } from '../components/layout/layout.component';
-import { PortfolioExperience } from '../components/portfolio/experience/experience.component';
+import { PortfolioHeader } from "../components/portfolio/header/header.component";
+import { OptionalPortfolioSection } from "../components/portfolio/section/portfolio-section.component";
+import { Layout } from "../components/layout/layout.component";
+import { PortfolioExperience } from "../components/portfolio/experience/experience.component";
 
-import { Flexbox, Tag } from '../styles/components';
-import { Paragraph, Small } from '../styles/typography';
+import { Flexbox, Tag } from "../styles/components";
+import { Paragraph, Small } from "../styles/typography";
 
-import { PortfolioWorkExperience } from '../components/portfolio/work-experience/work-experience.component';
-import { SocialLinksFixed, SocialContainer } from '../components/social/social.styled';
+import { PortfolioWorkExperience } from "../components/portfolio/work-experience/work-experience.component";
+import {
+  SocialLinksFixed,
+  SocialContainer,
+} from "../components/social/social.styled";
 
-import { PORTFOLIO_METADATA as metadata } from '../data/portfolio-metadata';
+import { PORTFOLIO_METADATA as metadata } from "../data/portfolio-metadata";
 
 import portfolioFilePath from "../assets/Uladzislau Karpovich - Full Stack Developer, Brest.pdf";
 
@@ -21,6 +24,7 @@ const IndexPage = () => {
   const {
     name,
     position,
+    country,
     region,
     social,
     summary,
@@ -32,13 +36,16 @@ const IndexPage = () => {
 
   const { email, linkedin, github } = social;
 
-  const tags = [position, region];
+  const location = `${region}, ${country}`;
+
+  const tags = [position, location];
 
   return (
     <Layout>
       <Helmet>
         <title>{`${name} - ${position}`}</title>
       </Helmet>
+
       <PortfolioHeader name={name} tags={tags}>
         <SocialLinksFixed
           emailUrl={email}
@@ -47,17 +54,20 @@ const IndexPage = () => {
           portfolioUrl={portfolioFilePath}
         ></SocialLinksFixed>
       </PortfolioHeader>
-      <OptionalPortfolioSection title='Summary' data={summary}>
+
+      <OptionalPortfolioSection title="Summary" data={summary}>
         <Paragraph>{summary}</Paragraph>
       </OptionalPortfolioSection>
-      <OptionalPortfolioSection title='Skills' data={skills}>
+
+      <OptionalPortfolioSection title="Skills" data={skills}>
         <Flexbox gap={8}>
           {skills.map((skill) => (
             <Tag key={skill}>{skill}</Tag>
           ))}
         </Flexbox>
       </OptionalPortfolioSection>
-      <OptionalPortfolioSection title='Languages' data={languages}>
+
+      <OptionalPortfolioSection title="Languages" data={languages}>
         <Flexbox gap={8}>
           {languages.map(({ language, level }) => (
             <Tag key={language}>
@@ -67,8 +77,9 @@ const IndexPage = () => {
           ))}
         </Flexbox>
       </OptionalPortfolioSection>
-      <OptionalPortfolioSection title='Education' data={education}>
-        <Flexbox flow='column' gap={16}>
+
+      <OptionalPortfolioSection title="Education" data={education}>
+        <Flexbox flow="column" gap={16}>
           {education.map(({ summary, ...otherProps }) => (
             <PortfolioExperience key={otherProps.date} {...otherProps}>
               {summary}
@@ -76,8 +87,9 @@ const IndexPage = () => {
           ))}
         </Flexbox>
       </OptionalPortfolioSection>
-      <OptionalPortfolioSection title='Experience' data={experience}>
-        <Flexbox flow='column' gap={16}>
+
+      <OptionalPortfolioSection title="Experience" data={experience}>
+        <Flexbox flow="column" gap={16}>
           {experience.map(({ project, ...otherProps }) => (
             <PortfolioWorkExperience
               key={otherProps.date}
@@ -87,10 +99,8 @@ const IndexPage = () => {
           ))}
         </Flexbox>
       </OptionalPortfolioSection>
-      <OptionalPortfolioSection
-        title='Contact Information'
-        data={social}
-      >
+
+      <OptionalPortfolioSection title="Contact Information" data={social}>
         <SocialContainer
           emailUrl={email}
           linkedInUrl={linkedin}
