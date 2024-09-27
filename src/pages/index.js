@@ -1,115 +1,197 @@
-import * as React from "react";
+import * as React from "react"
+import styled from "styled-components"
 
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet"
 
-import { PortfolioHeader } from "../components/portfolio/header/header.component";
-import { OptionalPortfolioSection } from "../components/portfolio/section/portfolio-section.component";
-import { Layout } from "../components/layout/layout.component";
-import { PortfolioExperience } from "../components/portfolio/experience/experience.component";
+import { ColorSettings } from "../styles/globalStyles.js"
 
-import { Flexbox, Tag } from "../styles/components";
-import { Paragraph, Small } from "../styles/typography";
+import { Flexbox, Tag, Section, neumorphismBoxesStyles } from "../components/shared/components.js"
+import { Paragraph, Small } from "../components/shared/typography.js"
 
-import { PortfolioWorkExperience } from "../components/portfolio/work-experience/work-experience.component";
-import {
-  SocialLinksFixed,
-  SocialContainer,
-} from "../components/social/social.styled";
+import { Layout } from "../components/layout.component.jsx"
+import { OptionalPortfolioSection } from "../components/portfolio-section.component.jsx"
 
-import { PORTFOLIO_METADATA as metadata } from "../data/portfolio-metadata";
+import { PortfolioHeader } from "../components/header.component.jsx"
 
-import portfolioFilePath from "../assets/Uladzislau Karpovich - Full Stack Developer, Brest.pdf";
+import { ProfilePhoto } from "../components/profile-photo.component.jsx"
+import { Location } from "../components/location.component.jsx"
+import { EducationExperience, WorkExperience } from "../components/experience.component.jsx"
+import { EmailRoundIcon, LinkedInRoundIcon, GithubRoundIcon, DownloadRoundIcon } from "../components/social.component.jsx"
+
+import { PORTFOLIO_METADATA as metadata } from "../data/portfolio-metadata"
+import portfolioFilePath from "../assets/Uladzislau Karpovich - Full Stack Developer, Brest.pdf"
 
 const IndexPage = () => {
-  const {
-    name,
-    position,
-    country,
-    region,
-    social,
-    summary,
-    skills,
-    languages,
-    education,
-    experience,
-  } = metadata;
+	const { name, position, country, region, social, summary, skills, languages, education, experience } = metadata
 
-  const { email, linkedin, github } = social;
+	const location = `${region}, ${country}`
 
-  const location = `${region}, ${country}`;
+	return (
+		<Layout>
+			<Helmet>
+				<title>{`${name} - ${position}`}</title>
+			</Helmet>
 
-  const tags = [position, location];
+			<DesktopLayout>
+				<DesktopSidebar>
+					<PhotoSection />
+					<LocationSection location={location} />
+					<AboutMeSection summary={summary} />
+					<EducationSection education={education} />
+					<SkillsSection skills={skills} />
+					<LanguagesSection languages={languages} />
+				</DesktopSidebar>
 
-  return (
-    <Layout>
-      <Helmet>
-        <title>{`${name} - ${position}`}</title>
-      </Helmet>
+				<section>
+					<HeaderSection name={name} position={position} social={social} />
+					<ExperienceSection experience={experience} />
+				</section>
+			</DesktopLayout>
 
-      <PortfolioHeader name={name} tags={tags}>
-        <SocialLinksFixed
-          emailUrl={email}
-          linkedInUrl={linkedin}
-          githubUrl={github}
-          portfolioUrl={portfolioFilePath}
-        ></SocialLinksFixed>
-      </PortfolioHeader>
+			<MobileLayout>
+				<MobileHeader>
+					<PhotoSection />
+					<HeaderSection name={name} position={position} social={social} />
+				</MobileHeader>
 
-      <OptionalPortfolioSection title="Summary" data={summary}>
-        <Paragraph>{summary}</Paragraph>
-      </OptionalPortfolioSection>
+				<AboutMeSection summary={summary} />
+				<SkillsSection skills={skills} />
+				<LanguagesSection languages={languages} />
+				<EducationSection education={education} />
+				<ExperienceSection experience={experience} />
+				<ContactsSection social={social} />
+			</MobileLayout>
+		</Layout>
+	)
+}
 
-      <OptionalPortfolioSection title="Skills" data={skills}>
-        <Flexbox gap={8}>
-          {skills.map((skill) => (
-            <Tag key={skill}>{skill}</Tag>
-          ))}
-        </Flexbox>
-      </OptionalPortfolioSection>
+export const MobileLayout = styled.div`
+	display: none;
+	background: ${ColorSettings.sectionColor};
+	${neumorphismBoxesStyles};
+	padding: 0px 12px;
 
-      <OptionalPortfolioSection title="Languages" data={languages}>
-        <Flexbox gap={8}>
-          {languages.map(({ language, level }) => (
-            <Tag key={language}>
-              <Paragraph>{language}</Paragraph>
-              <Small>{level}</Small>
-            </Tag>
-          ))}
-        </Flexbox>
-      </OptionalPortfolioSection>
+	@media screen and (max-width: 860px) {
+		display: block;
+	}
+`
 
-      <OptionalPortfolioSection title="Education" data={education}>
-        <Flexbox flow="column" gap={16}>
-          {education.map(({ summary, ...otherProps }) => (
-            <PortfolioExperience key={otherProps.date} {...otherProps}>
-              {summary}
-            </PortfolioExperience>
-          ))}
-        </Flexbox>
-      </OptionalPortfolioSection>
+export const MobileHeader = styled.div`
+	display: flex;
 
-      <OptionalPortfolioSection title="Experience" data={experience}>
-        <Flexbox flow="column" gap={16}>
-          {experience.map(({ project, ...otherProps }) => (
-            <PortfolioWorkExperience
-              key={otherProps.date}
-              project={project}
-              {...otherProps}
-            />
-          ))}
-        </Flexbox>
-      </OptionalPortfolioSection>
+	@media screen and (max-width: 520px) {
+		flex-flow: column;
+	}
+`
 
-      <OptionalPortfolioSection title="Contact Information" data={social}>
-        <SocialContainer
-          emailUrl={email}
-          linkedInUrl={linkedin}
-          githubUrl={github}
-          portfolioUrl={portfolioFilePath}
-        ></SocialContainer>
-      </OptionalPortfolioSection>
-    </Layout>
-  );
-};
+export const DesktopLayout = styled.div`
+	display: flex;
+	gap: 24px;
+	margin: 36px auto;
 
-export default IndexPage;
+	@media screen and (max-width: 860px) {
+		display: none;
+		background-color: lavender;
+	}
+`
+
+const DesktopSidebar = styled.section`
+	background: ${ColorSettings.sectionColor};
+	${neumorphismBoxesStyles};
+	max-width: 320px;
+	padding: 0px 12px;
+`
+
+const PhotoSection = () => (
+	<Section>
+		<ProfilePhoto />
+	</Section>
+)
+
+const HeaderSection = ({ name, position, social }) => {
+	const { email, linkedin, github } = social
+
+	return (
+		<PortfolioHeader name={name} position={position}>
+			<Flexbox>
+				<EmailRoundIcon link={`mailto:${email}`} />
+				<LinkedInRoundIcon link={linkedin} />
+				<GithubRoundIcon link={github} />
+				<DownloadRoundIcon link={portfolioFilePath} />
+			</Flexbox>
+		</PortfolioHeader>
+	)
+}
+
+const LocationSection = ({ location }) => (
+	<Section>
+		<Location location={location} />
+	</Section>
+)
+
+const AboutMeSection = ({ summary }) => (
+	<OptionalPortfolioSection title="About me" data={summary}>
+		<Paragraph>{summary}</Paragraph>
+	</OptionalPortfolioSection>
+)
+
+const SkillsSection = ({ skills }) => (
+	<OptionalPortfolioSection title="Skills" data={skills}>
+		<Flexbox gap={8}>
+			{skills.map((skill) => (
+				<Tag key={skill}>{skill}</Tag>
+			))}
+		</Flexbox>
+	</OptionalPortfolioSection>
+)
+
+const LanguagesSection = ({ languages }) => (
+	<OptionalPortfolioSection title="Languages" data={languages}>
+		<Flexbox gap={8}>
+			{languages.map(({ language, level }) => (
+				<Tag key={language}>
+					<Paragraph>{language}</Paragraph>
+					<Small>{level}</Small>
+				</Tag>
+			))}
+		</Flexbox>
+	</OptionalPortfolioSection>
+)
+
+const EducationSection = ({ education }) => (
+	<OptionalPortfolioSection title="Education" data={education}>
+		<Flexbox flow="column" gap={8}>
+			{education.map(({ summary, ...otherProps }) => (
+				<EducationExperience key={otherProps.date} {...otherProps}>
+					<Small>{summary}</Small>
+				</EducationExperience>
+			))}
+		</Flexbox>
+	</OptionalPortfolioSection>
+)
+
+const ExperienceSection = ({ experience }) => (
+	<OptionalPortfolioSection title="Experience" data={experience}>
+		<Flexbox flow="column" gap={24}>
+			{experience.map(({ project, ...otherProps }) => (
+				<WorkExperience key={otherProps.date} project={project} {...otherProps} />
+			))}
+		</Flexbox>
+	</OptionalPortfolioSection>
+)
+
+const ContactsSection = ({ social }) => {
+	const { email, linkedin, github } = social
+	return (
+		<OptionalPortfolioSection title="Contacts" data={social}>
+			<Flexbox>
+				<EmailRoundIcon link={`mailto:${email}`} />
+				<LinkedInRoundIcon link={linkedin} />
+				<GithubRoundIcon link={github} />
+				<DownloadRoundIcon link={portfolioFilePath} />
+			</Flexbox>
+		</OptionalPortfolioSection>
+	)
+}
+
+export default IndexPage

@@ -1,11 +1,19 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components"
 
 export const ColorSettings = {
-  fontColor: "#424242",
-  fontOptionalColor: "#353535",
-  backgroundColor: "#f8f9eb",
-};
+	fontColor: "#424242",
+	fontOptionalColor: "#353535",
+	backgroundColor: "#E9E9E9",
+	sectionColor: "#F4F4F4",
+	secondaryColor: "#DEDDFF"
+}
+
 const GlobalStyle = createGlobalStyle`
+  html{
+    font-size: 62.5%;
+  }
+
+
   ul{
     margin:0;
   }
@@ -13,9 +21,9 @@ const GlobalStyle = createGlobalStyle`
   body {
     background: ${ColorSettings.backgroundColor};
     color: ${ColorSettings.fontColor};
-    font-size: 14px;
-    font-family: Poppins, -apple-system, Roboto, sans-serif, serif;
+    font-size: 1.5rem;
+    font-family: Poppins, Montserrat, -apple-system, Roboto, sans-serif, serif;
   }
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle
