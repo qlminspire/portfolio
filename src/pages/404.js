@@ -3,9 +3,10 @@ import { Helmet } from "react-helmet"
 
 import { Link } from "gatsby"
 
+import { Layout } from "../components/layout.component"
+
 import { Section } from "../components/shared/components"
 import { H1, Paragraph } from "../components/shared/typography"
-import { Layout } from "../components/layout.component"
 
 const NotFoundPage = () => (
 	<Layout>

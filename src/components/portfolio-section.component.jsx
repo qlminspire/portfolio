@@ -11,14 +11,14 @@ import { withOptional } from "./utils/with-optional.component"
 const PortfolioSection = ({ title, children }) => (
 	<Section>
 		<H3>{title}</H3>
-		<PortfolioSecationDivider />
+		<PortfolioSectionDivider />
 		{children}
 	</Section>
 )
 
 export const OptionalPortfolioSection = withOptional(PortfolioSection)
 
-const PortfolioSecationDivider = styled.div`
+const PortfolioSectionDivider = styled.div`
 	background: ${ColorSettings.secondaryColor};
 	max-width: 60%;
 	height: 6px;

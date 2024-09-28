@@ -9,7 +9,7 @@ export const PORTFOLIO_METADATA = {
 		github: "https://github.com/qlminspire"
 	},
 	summary:
-		"Full Stack Developer with over 6 years experience. Skilled in .NET development including Desktop, MVC and Web API. Building rich user interface using HTML, CSS and React library",
+		"Full-stack developer with over 6 years of experience. Skilled in .NET development, including Desktop, MVC, and Web APIs. Building a rich user interface using HTML, CSS, and React library",
 	skills: [".NET", "C#", "Javascript", "HTML", "CSS", "React", "SQL", "Azure"],
 	languages: [
 		{ language: "English", level: "Intermediate" },
@@ -35,8 +35,8 @@ export const PORTFOLIO_METADATA = {
 			position: "Software Developer",
 			project: {
 				summary: "Trading platform",
-				team: "10 Developers in backend team, 5+ QA, 3 BA (30+ developers in total)",
-				technologies: ["C#", "ASP.NET Web API", "Angular", "Redis", "Azure Service Bus", "Azure", "xUnit"],
+				team: "10 developers in the backend team, 5 QA, 3 BA (30+ developers on project)",
+				technologies: ["C#", "ASP.NET Web API", "Angular", "Redis", "Azure", "Azure Service Bus", "xUnit"],
 				responsibilities: ["Design and development Web API", "3-rd party providers integration, payment providers integration"]
 			}
 		},
@@ -46,7 +46,7 @@ export const PORTFOLIO_METADATA = {
 			position: "Software Developer",
 			project: {
 				summary: "Modules for large analytical application",
-				team: "3 Developers",
+				team: "3 developers",
 				technologies: ["C#", "WinForms"],
 				responsibilities: [
 					"Design and development modules for WinForms application",
@@ -60,8 +60,8 @@ export const PORTFOLIO_METADATA = {
 			place: "EPAM",
 			position: "Software Developer",
 			project: {
-				summary: `Large scale .NET web application targeted for effecient work with invoices`,
-				team: "15+ Developers in backend team, 2 QA (80+ developers in total)",
+				summary: `Large-scale .NET web application targeted for efficient work with invoices`,
+				team: "15+ developers in the backend team, 2 QA (80+ developers on project)",
 				technologies: [
 					"C#",
 					"ASP.NET Web API",
@@ -87,8 +87,8 @@ export const PORTFOLIO_METADATA = {
 			place: "EPAM",
 			position: "Junior Software Developer",
 			project: {
-				summary: "Set of applications for documents processing in bank system",
-				team: "3 Developers, 2 QA, BA",
+				summary: "Set of applications for document processing in the bank system",
+				team: "3 developers, 2 QA, BA",
 				technologies: [
 					"C#",
 					"ASP.NET Web API",

@@ -5,8 +5,12 @@ import { ColorSettings } from "../../styles/globalStyles"
 export const neumorphismBoxesStyles = css`
 	border: 1px solid rgba(255, 255, 255, 0.2);
 	box-sizing: border-box;
-	box-shadow: -6px -6px 12px rgba(255, 255, 255, 0.5), 6px 6px 12px rgba(209, 205, 199, 0.5);
 	border-radius: 20px;
+	box-shadow: -6px -6px 12px rgba(255, 255, 255, 0.5), 6px 6px 12px rgba(209, 205, 199, 0.5);
+
+	@media print {
+		box-shadow: none;
+	}
 `
 
 export const Section = styled.section`
@@ -33,6 +37,10 @@ export const Tag = styled.div`
 	:hover {
 		cursor: default;
 	}
+
+	@media print {
+		background: ${ColorSettings.backgroundColor};
+	}
 `
 
 export const Flexbox = styled.div`
@@ -48,7 +56,7 @@ export const RoundIcon = styled.div`
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	background: ${ColorSettings.sectionColor};
+	background: ${ColorSettings.primaryColor};
 
 	${neumorphismBoxesStyles};
 

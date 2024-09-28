@@ -1,10 +1,9 @@
 import { createGlobalStyle } from "styled-components"
 
 export const ColorSettings = {
-	fontColor: "#424242",
-	fontOptionalColor: "#353535",
+	fontColor: "#525252",
 	backgroundColor: "#E9E9E9",
-	sectionColor: "#F4F4F4",
+	primaryColor: "#F4F4F4",
 	secondaryColor: "#DEDDFF"
 }
 
@@ -15,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
 
 
   ul{
-    margin:0;
+    margin: 0;
   }
 
   body {
@@ -23,6 +22,10 @@ const GlobalStyle = createGlobalStyle`
     color: ${ColorSettings.fontColor};
     font-size: 1.5rem;
     font-family: Poppins, Montserrat, -apple-system, Roboto, sans-serif, serif;
+
+    @media print {
+      font-family: Montserrat;
+    }
   }
 `
 

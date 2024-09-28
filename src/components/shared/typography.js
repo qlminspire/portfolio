@@ -1,10 +1,12 @@
 import styled, { css } from "styled-components"
 
-import { ColorSettings } from "../../styles/globalStyles"
-
 const commonHeadingStyles = css`
 	margin: 0 0 12px 0;
 	font-family: TheNext, Montserrat, sans-serif;
+
+	@media print {
+		font-family: Montserrat;
+	}
 `
 
 export const H1 = styled.h1`
@@ -28,7 +30,7 @@ export const H4 = styled.h4`
 `
 
 export const H5 = styled.h5`
-	font-size: 1em;
+	font-size: 1.05em;
 	${commonHeadingStyles}
 `
 
@@ -37,8 +39,7 @@ export const Paragraph = styled.p`
 `
 
 export const Small = styled.span`
-	font-size: 0.96em;
-	color: ${ColorSettings.fontOptionalColor};
+	font-size: 0.95em;
 `
 
 export const Bold = styled.span`
