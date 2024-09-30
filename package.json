@@ -1,8 +1,8 @@
 {
-  "name": "neufolio",
+  "name": "portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Neufolio",
+  "description": "Portfolio website",
   "author": "Vladislav Karpovich",
   "keywords": [
     "gatsby"

@@ -1,5 +1,5 @@
 module.exports = {
-	pathPrefix: "/neufolio",
+	pathPrefix: "/portfolio",
 	siteMetadata: {
 		siteUrl: "https://www.yourdomain.tld",
 		title: "Vladislav Karpovich - Full Stack Developer"
