@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 export const ProfilePhoto = () => (
 	<ProfilePhotoContainer>
-		<StaticImage src="../assets/images/profile-photo.jpg" alt="Profile photo" />
+		<StaticImage src="../data/portfolio-photo.jpg" alt="Profile photo" />
 	</ProfilePhotoContainer>
 )
 

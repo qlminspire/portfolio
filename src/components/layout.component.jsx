@@ -20,7 +20,7 @@ import { Location } from "../components/location.component.jsx"
 import { EducationExperience, WorkExperience } from "../components/experience.component.jsx"
 import { EmailRoundIcon, LinkedInRoundIcon, GithubRoundIcon, DownloadRoundIcon } from "../components/social.component.jsx"
 
-import portfolioFilePath from "../assets/Vladislav Karpovich - Full Stack Developer, Brest.pdf"
+import portfolioFilePath from "../data/Vladislav Karpovich - Full Stack Developer, Brest.pdf"
 
 export const Layout = ({ children, className }) => (
 	<LayoutContainer className={className}>

@@ -12,7 +12,7 @@ module.exports = {
 		{
 			resolve: "gatsby-plugin-manifest",
 			options: {
-				icon: "src/assets/images/app_icon.png"
+				icon: "src/assets/icons/app_icon.png"
 			}
 		},
 		"gatsby-transformer-remark",
@@ -22,7 +22,7 @@ module.exports = {
 			resolve: "gatsby-source-filesystem",
 			options: {
 				name: "images",
-				path: "./src/assets/images"
+				path: "./src/data/"
 			},
 			__key: "images"
 		},
