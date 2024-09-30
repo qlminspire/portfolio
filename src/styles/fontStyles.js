@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components"
 
-import Poppins from "../assets/fonts/Poppins-Regular.ttf"
-import TheNext from "../assets/fonts/TheNextFont.ttf"
+import TheNext from "../assets/fonts/TheNext.ttf"
+import Poppins from "../assets/fonts/Poppins.ttf"
 import Montserrat from "../assets/fonts/Montserrat.ttf"
 
 const FontStyles = createGlobalStyle`
