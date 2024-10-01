@@ -18,9 +18,7 @@ import { PortfolioHeader } from "../components/header.component.jsx"
 import { ProfilePhoto } from "../components/profile-photo.component.jsx"
 import { Location } from "../components/location.component.jsx"
 import { EducationExperience, WorkExperience } from "../components/experience.component.jsx"
-import { EmailRoundIcon, LinkedInRoundIcon, GithubRoundIcon, DownloadRoundIcon } from "../components/social.component.jsx"
-
-import portfolioFilePath from "../data/Vladislav Karpovich - Full Stack Developer, Brest.pdf"
+import { SocialComponent } from "../components/social.component.jsx"
 
 export const Layout = ({ children, className }) => (
 	<LayoutContainer className={className}>
@@ -90,17 +88,10 @@ export const PhotoSection = () => (
 	</Section>
 )
 
-export const HeaderSection = ({ name, position, social }) => {
-	const { email, linkedin, github } = social
-
+export const HeaderSection = ({ name, position, social, portfolioFile, portfolioFileName }) => {
 	return (
 		<PortfolioHeader name={name} position={position}>
-			<Flexbox>
-				<EmailRoundIcon link={`mailto:${email}`} />
-				<LinkedInRoundIcon link={linkedin} />
-				<GithubRoundIcon link={github} />
-				<DownloadRoundIcon link={portfolioFilePath} />
-			</Flexbox>
+			<SocialComponent social={social} portfolioFile={portfolioFile} portfolioFileName={portfolioFileName} />
 		</PortfolioHeader>
 	)
 }
@@ -162,16 +153,10 @@ export const ExperienceSection = ({ experience }) => (
 	</OptionalPortfolioSection>
 )
 
-export const ContactsSection = ({ social }) => {
-	const { email, linkedin, github } = social
+export const ContactsSection = ({ social, portfolioFile, portfolioFileName }) => {
 	return (
 		<OptionalPortfolioSection title="Contacts" data={social}>
-			<Flexbox>
-				<EmailRoundIcon link={`mailto:${email}`} />
-				<LinkedInRoundIcon link={linkedin} />
-				<GithubRoundIcon link={github} />
-				<DownloadRoundIcon link={portfolioFilePath} />
-			</Flexbox>
+			<SocialComponent social={social} portfolioFile={portfolioFile} portfolioFileName={portfolioFileName} />
 		</OptionalPortfolioSection>
 	)
 }

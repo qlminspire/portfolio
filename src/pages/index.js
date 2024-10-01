@@ -20,11 +20,14 @@ import {
 } from "../components/layout.component.jsx"
 
 import { PORTFOLIO_METADATA } from "../data/portfolio-metadata"
+import portfolioPdf from "../data/portfolio.pdf"
 
 const IndexPage = () => {
 	const { name, position, country, region, social, summary, skills, languages, education, experience } = PORTFOLIO_METADATA
 
 	const location = `${region}, ${country}`
+
+	const portfolioFileName = `${name} - ${position}, ${region}`
 
 	return (
 		<Layout>
@@ -43,7 +46,13 @@ const IndexPage = () => {
 				</DesktopSidebar>
 
 				<section>
-					<HeaderSection name={name} position={position} social={social} />
+					<HeaderSection
+						name={name}
+						position={position}
+						social={social}
+						portfolioFile={portfolioPdf}
+						portfolioFileName={portfolioFileName}
+					/>
 					<ExperienceSection experience={experience} />
 				</section>
 			</DesktopLayout>
@@ -51,7 +60,13 @@ const IndexPage = () => {
 			<MobileLayout>
 				<MobileHeader>
 					<PhotoSection />
-					<HeaderSection name={name} position={position} social={social} />
+					<HeaderSection
+						name={name}
+						position={position}
+						social={social}
+						portfolioFile={portfolioPdf}
+						portfolioFileName={portfolioFileName}
+					/>
 				</MobileHeader>
 
 				<AboutMeSection summary={summary} />
@@ -59,7 +74,7 @@ const IndexPage = () => {
 				<LanguagesSection languages={languages} />
 				<EducationSection education={education} />
 				<ExperienceSection experience={experience} />
-				<ContactsSection social={social} />
+				<ContactsSection social={social} portfolioFile={portfolioPdf} portfolioFileName={portfolioFileName} />
 			</MobileLayout>
 		</Layout>
 	)
