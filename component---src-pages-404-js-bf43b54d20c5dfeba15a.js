@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[125],{3331:function(e,l,t){t.r(l);var n=t(6540),a=t(8154),u=t(8007),o=t(3582),c=t(5863),r=t(9378);l.default=()=>n.createElement(o.PE,null,n.createElement(a.m,null,n.createElement("title",null,"Page not found")),n.createElement(c.wn,null,n.createElement(r.H1,null,"Page not found"),n.createElement(r.fz,null,n.createElement(u.Link,{to:"/"},"Go back"))))}}]);
-//# sourceMappingURL=component---src-pages-404-js-bf43b54d20c5dfeba15a.js.map
