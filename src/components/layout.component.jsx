@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet"
 import FontStyles from "../styles/fontStyles"
 import GlobalStyle from "../styles/globalStyles"
 
-import { ColorSettings } from "../styles/globalStyles.js"
+import { COLOR_SETTINGS } from "../styles/globalStyles.js"
 
 import { Flexbox, Tag, Section, neumorphismBoxesStyles } from "../components/shared/components.js"
 import { Paragraph, Small } from "../components/shared/typography.js"
@@ -42,7 +42,7 @@ const LayoutContainer = styled.main`
 
 export const MobileLayout = styled.div`
 	display: none;
-	background: ${ColorSettings.primaryColor};
+	background: ${COLOR_SETTINGS.secondaryColor};
 	${neumorphismBoxesStyles};
 	padding: 0px 12px;
 
@@ -78,7 +78,7 @@ export const DesktopLayout = styled.div`
 `
 
 export const DesktopSidebar = styled.section`
-	background: ${ColorSettings.primaryColor};
+	background: ${COLOR_SETTINGS.secondaryColor};
 	${neumorphismBoxesStyles};
 	max-width: 320px;
 	padding: 0px 12px;

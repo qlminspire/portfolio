@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import { ColorSettings } from "../styles/globalStyles"
+import { COLOR_SETTINGS } from "../styles/globalStyles"
 
 import { H3 } from "./shared/typography"
 import { Section } from "./shared/components"
@@ -19,7 +19,7 @@ const PortfolioSection = ({ title, children }) => (
 export const OptionalPortfolioSection = withOptional(PortfolioSection)
 
 const PortfolioSectionDivider = styled.div`
-	background: ${ColorSettings.secondaryColor};
+	background: ${COLOR_SETTINGS.primaryColor};
 	max-width: 60%;
 	height: 6px;
 	margin-bottom: 16px;

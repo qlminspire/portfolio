@@ -1,10 +1,10 @@
 import { createGlobalStyle } from "styled-components"
 
-export const ColorSettings = {
-	fontColor: "#525252",
+export const COLOR_SETTINGS = {
 	backgroundColor: "#E9E9E9",
-	primaryColor: "#F4F4F4",
-	secondaryColor: "#DEDDFF"
+	fontColor: "#525252",
+	primaryColor: "#DEDDFF",
+	secondaryColor: "#F4F4F4"
 }
 
 const GlobalStyle = createGlobalStyle`
@@ -18,8 +18,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${ColorSettings.backgroundColor};
-    color: ${ColorSettings.fontColor};
+    background: ${COLOR_SETTINGS.backgroundColor};
+    color: ${COLOR_SETTINGS.fontColor};
+
     font-size: 1.5rem;
     font-family: Poppins, Montserrat, -apple-system, Roboto, sans-serif, serif;
 

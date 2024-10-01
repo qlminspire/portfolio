@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components"
 
-import { ColorSettings } from "../../styles/globalStyles"
+import { COLOR_SETTINGS } from "../../styles/globalStyles"
 
 export const neumorphismBoxesStyles = css`
 	border: 1px solid rgba(255, 255, 255, 0.2);
@@ -25,7 +25,7 @@ export const A = styled.a`
 	padding: 0;
 	margin: 0;
 	display: flex;
-	color: ${ColorSettings.fontColor};
+	color: ${COLOR_SETTINGS.fontColor};
 `
 
 export const Tag = styled.div`
@@ -39,7 +39,7 @@ export const Tag = styled.div`
 	}
 
 	@media print {
-		background: ${ColorSettings.backgroundColor};
+		background: ${COLOR_SETTINGS.backgroundColor};
 	}
 `
 
@@ -56,17 +56,17 @@ export const RoundIcon = styled.div`
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	background: ${ColorSettings.primaryColor};
+	background: ${COLOR_SETTINGS.secondaryColor};
 
 	${neumorphismBoxesStyles};
 
 	svg {
-		fill: ${ColorSettings.fontColor};
+		fill: ${COLOR_SETTINGS.fontColor};
 		width: 28px;
 		height: 28px;
 	}
 
 	:hover {
-		background: ${ColorSettings.secondaryColor};
+		background: ${COLOR_SETTINGS.primaryColor};
 	}
 `
