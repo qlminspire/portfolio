@@ -15,10 +15,11 @@ import { OptionalPortfolioSection } from "../components/portfolio-section.compon
 
 import { PortfolioHeader } from "../components/header.component.jsx"
 
-import { ProfilePhoto } from "../components/profile-photo.component.jsx"
+import { ProfilePhotoContainer } from "../components/profile-photo.component.jsx"
 import { Location } from "../components/location.component.jsx"
 import { EducationExperience, WorkExperience } from "../components/experience.component.jsx"
 import { SocialComponent } from "../components/social.component.jsx"
+import { StaticImage } from "gatsby-plugin-image"
 
 export const Layout = ({ children, className }) => (
 	<LayoutContainer className={className}>
@@ -75,7 +76,7 @@ export const DesktopLayout = styled.div`
 	}
 `
 
-export const DesktopSidebar = styled.section`
+export const DesktopSidebar = styled.aside`
 	background: ${COLOR_SETTINGS.secondaryColor};
 	${neumorphismBoxesStyles};
 	max-width: 320px;
@@ -84,17 +85,17 @@ export const DesktopSidebar = styled.section`
 
 export const PhotoSection = () => (
 	<Section>
-		<ProfilePhoto />
+		<ProfilePhotoContainer>
+			<StaticImage src="../data/portfolio-photo.jpg"></StaticImage>
+		</ProfilePhotoContainer>
 	</Section>
 )
 
-export const HeaderSection = ({ name, position, social, portfolioFile, portfolioFileName }) => {
-	return (
-		<PortfolioHeader name={name} position={position}>
-			<SocialComponent social={social} portfolioFile={portfolioFile} portfolioFileName={portfolioFileName} />
-		</PortfolioHeader>
-	)
-}
+export const HeaderSection = ({ name, position, social, portfolioFile, portfolioFileName }) => (
+	<PortfolioHeader name={name} position={position}>
+		<SocialComponent social={social} portfolioFile={portfolioFile} portfolioFileName={portfolioFileName} />
+	</PortfolioHeader>
+)
 
 export const LocationSection = ({ location }) => (
 	<Section>
@@ -153,10 +154,8 @@ export const ExperienceSection = ({ experience }) => (
 	</OptionalPortfolioSection>
 )
 
-export const ContactsSection = ({ social, portfolioFile, portfolioFileName }) => {
-	return (
-		<OptionalPortfolioSection title="Contacts" data={social}>
-			<SocialComponent social={social} portfolioFile={portfolioFile} portfolioFileName={portfolioFileName} />
-		</OptionalPortfolioSection>
-	)
-}
+export const ContactsSection = ({ social, portfolioFile, portfolioFileName }) => (
+	<OptionalPortfolioSection title="Contacts" data={social}>
+		<SocialComponent social={social} portfolioFile={portfolioFile} portfolioFileName={portfolioFileName} />
+	</OptionalPortfolioSection>
+)

@@ -1,15 +1,6 @@
-import React from "react"
 import styled from "styled-components"
 
-import { StaticImage } from "gatsby-plugin-image"
-
-export const ProfilePhoto = () => (
-	<ProfilePhotoContainer>
-		<StaticImage src="../data/portfolio-photo.jpg" alt="Profile photo" />
-	</ProfilePhotoContainer>
-)
-
-const ProfilePhotoContainer = styled.div`
+export const ProfilePhotoContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	margin: 0 auto;
