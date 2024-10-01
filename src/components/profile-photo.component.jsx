@@ -3,7 +3,9 @@ import styled from "styled-components"
 export const ProfilePhotoContainer = styled.div`
 	display: flex;
 	justify-content: center;
+
 	margin: 0 auto;
+
 	width: 250px;
 	height: 250px;
 
@@ -14,7 +16,5 @@ export const ProfilePhotoContainer = styled.div`
 
 	img {
 		border-radius: 100%;
-		width: 100%;
-		height: 100%;
 	}
 `

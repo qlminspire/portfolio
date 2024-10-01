@@ -19,8 +19,10 @@ const PortfolioSection = ({ title, children }) => (
 export const OptionalPortfolioSection = withOptional(PortfolioSection)
 
 const PortfolioSectionDivider = styled.div`
-	background: ${COLOR_SETTINGS.primaryColor};
 	max-width: 60%;
 	height: 6px;
+
 	margin-bottom: 16px;
+
+	background: ${COLOR_SETTINGS.primaryColor};
 `

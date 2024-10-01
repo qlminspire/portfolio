@@ -6,15 +6,13 @@ import { Paragraph, Bold, H5, Small } from "./shared/typography"
 import { withOptional } from "./utils/with-optional.component"
 
 export const EducationExperience = ({ date, place, position, children }) => (
-	<section>
-		<ExperienceHeader>
-			<H5>
-				{position} / {place}
-			</H5>
-			<Paragraph>{date}</Paragraph>
-			{children}
-		</ExperienceHeader>
-	</section>
+	<ExperienceHeader>
+		<H5>
+			{position} / {place}
+		</H5>
+		<Paragraph>{date}</Paragraph>
+		{children}
+	</ExperienceHeader>
 )
 
 export const WorkExperience = ({ date, place, position, project: { summary, area, team, technologies, responsibilities, challenges } }) => {

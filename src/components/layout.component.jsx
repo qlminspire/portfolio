@@ -18,7 +18,7 @@ import { PortfolioHeader } from "../components/header.component.jsx"
 import { ProfilePhotoContainer } from "../components/profile-photo.component.jsx"
 import { Location } from "../components/location.component.jsx"
 import { EducationExperience, WorkExperience } from "../components/experience.component.jsx"
-import { SocialComponent } from "../components/social.component.jsx"
+import { Social } from "../components/social.component.jsx"
 import { StaticImage } from "gatsby-plugin-image"
 
 export const Layout = ({ children, className }) => (
@@ -32,15 +32,17 @@ export const Layout = ({ children, className }) => (
 	</LayoutContainer>
 )
 
-const LayoutContainer = styled.main`
+const LayoutContainer = styled.div`
 	display: flex;
 	justify-content: center;
+
 	max-width: 1440px;
 	margin: 0 auto;
 `
 
 export const MobileLayout = styled.div`
 	display: none;
+
 	background: ${COLOR_SETTINGS.secondaryColor};
 	${neumorphismBoxesStyles};
 	padding: 0px 12px;
@@ -61,18 +63,19 @@ export const MobileHeader = styled.div`
 export const DesktopLayout = styled.div`
 	display: flex;
 	gap: 24px;
+
 	margin: 36px auto;
 
 	@media print {
 		margin: 6px auto;
 	}
 
-	@media screen and (max-width: 1080px) {
-		margin: 8px auto;
-	}
-
 	@media screen and (max-width: 860px) {
 		display: none;
+	}
+
+	@media screen and (max-width: 1080px) {
+		margin: 8px auto;
 	}
 `
 
@@ -86,14 +89,14 @@ export const DesktopSidebar = styled.aside`
 export const PhotoSection = () => (
 	<Section>
 		<ProfilePhotoContainer>
-			<StaticImage src="../data/portfolio-photo.jpg"></StaticImage>
+			<StaticImage src="../data/portfolio-photo.jpg" placeholder="blurred" />
 		</ProfilePhotoContainer>
 	</Section>
 )
 
 export const HeaderSection = ({ name, position, social, portfolioFile, portfolioFileName }) => (
 	<PortfolioHeader name={name} position={position}>
-		<SocialComponent social={social} portfolioFile={portfolioFile} portfolioFileName={portfolioFileName} />
+		<Social social={social} portfolioFile={portfolioFile} portfolioFileName={portfolioFileName} />
 	</PortfolioHeader>
 )
 
@@ -103,7 +106,7 @@ export const LocationSection = ({ location }) => (
 	</Section>
 )
 
-export const AboutMeSection = ({ summary }) => (
+export const AboutSection = ({ summary }) => (
 	<OptionalPortfolioSection title="About me" data={summary}>
 		<Paragraph>{summary}</Paragraph>
 	</OptionalPortfolioSection>
@@ -156,6 +159,6 @@ export const ExperienceSection = ({ experience }) => (
 
 export const ContactsSection = ({ social, portfolioFile, portfolioFileName }) => (
 	<OptionalPortfolioSection title="Contacts" data={social}>
-		<SocialComponent social={social} portfolioFile={portfolioFile} portfolioFileName={portfolioFileName} />
+		<Social social={social} portfolioFile={portfolioFile} portfolioFileName={portfolioFileName} />
 	</OptionalPortfolioSection>
 )

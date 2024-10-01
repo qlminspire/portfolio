@@ -17,21 +17,26 @@ export const Section = styled.section`
 	display: flex;
 	flex-flow: column;
 	justify-content: center;
+
 	padding: 8px;
 	margin: 8px;
 `
 
 export const A = styled.a`
+	display: flex;
+
 	padding: 0;
 	margin: 0;
-	display: flex;
+
 	color: ${COLOR_SETTINGS.fontColor};
 `
 
 export const Tag = styled.div`
+	display: inline-block;
+
 	font-size: 0.95em;
 	padding: 7px 14px;
-	display: inline-block;
+
 	${neumorphismBoxesStyles}
 
 	:hover {
@@ -50,12 +55,14 @@ export const Flexbox = styled.div`
 	gap: ${({ gap }) => (!gap ? "8px;" : `${gap}px;`)};
 `
 
-export const RoundIcon = styled.div`
-	padding: 8px;
-	border-radius: 100%;
+export const RoundIcon = styled.span`
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+
+	padding: 8px;
+	border-radius: 100%;
+
 	background: ${COLOR_SETTINGS.secondaryColor};
 
 	${neumorphismBoxesStyles};

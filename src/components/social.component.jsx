@@ -8,7 +8,7 @@ import LinkedInIcon from "../assets/icons/logo-linkedin.svg"
 import GithubIcon from "../assets/icons/logo-octocat.svg"
 import DownloadIcon from "../assets/icons/arrow-down-circle-outline.svg"
 
-export const SocialComponent = ({ social, portfolioFile, portfolioFileName }) => {
+export const Social = ({ social, portfolioFile, portfolioFileName }) => {
 	const { email, linkedin, github } = social
 
 	return (

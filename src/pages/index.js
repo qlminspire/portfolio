@@ -11,7 +11,7 @@ import {
 	PhotoSection,
 	LocationSection,
 	HeaderSection,
-	AboutMeSection,
+	AboutSection,
 	SkillsSection,
 	LanguagesSection,
 	EducationSection,
@@ -39,7 +39,7 @@ const IndexPage = () => {
 				<DesktopSidebar>
 					<PhotoSection />
 					<LocationSection location={location} />
-					<AboutMeSection summary={summary} />
+					<AboutSection summary={summary} />
 					<EducationSection education={education} />
 					<SkillsSection skills={skills} />
 					<LanguagesSection languages={languages} />
@@ -69,7 +69,7 @@ const IndexPage = () => {
 					/>
 				</MobileHeader>
 
-				<AboutMeSection summary={summary} />
+				<AboutSection summary={summary} />
 				<SkillsSection skills={skills} />
 				<LanguagesSection languages={languages} />
 				<EducationSection education={education} />
