@@ -89,7 +89,7 @@ export const DesktopSidebar = styled.aside`
 export const PhotoSection = () => (
 	<Section>
 		<ProfilePhotoContainer>
-			<StaticImage src="../data/portfolio-photo.jpg" placeholder="blurred" />
+			<StaticImage src="../data/portfolio-photo.jpg" placeholder="blurred" quality={100} />
 		</ProfilePhotoContainer>
 	</Section>
 )
