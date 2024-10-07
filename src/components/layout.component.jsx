@@ -36,7 +36,7 @@ const LayoutContainer = styled.div`
 	display: flex;
 	justify-content: center;
 
-	max-width: 1440px;
+	max-width: 1080px;
 	margin: 0 auto;
 `
 
@@ -64,7 +64,7 @@ export const DesktopLayout = styled.div`
 	display: flex;
 	gap: 24px;
 
-	margin: 36px auto;
+	margin: 12px auto;
 
 	@media print {
 		margin: 6px auto;
