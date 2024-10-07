@@ -27,7 +27,7 @@ const IndexPage = () => {
 
 	const location = `${region}, ${country}`
 
-	const portfolioFileName = `${name} - ${position}, ${region}`
+	const portfolioFileName = `CV_${name} - ${position}, ${region}`
 
 	return (
 		<Layout>
