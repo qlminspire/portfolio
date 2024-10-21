@@ -22,12 +22,14 @@ import {
 import { PORTFOLIO_METADATA } from "../data/portfolio-metadata"
 import portfolioPdf from "../data/portfolio.pdf"
 
+const CV_POSITION = "DOTNET"
+
 const IndexPage = () => {
 	const { name, position, country, region, social, summary, skills, languages, education, experience } = PORTFOLIO_METADATA
 
 	const location = `${region}, ${country}`
 
-	const portfolioFileName = `CV_${name} - ${position}, ${region}`
+	const portfolioFileName = `${name} - ${CV_POSITION}, ${region}`
 
 	return (
 		<Layout>

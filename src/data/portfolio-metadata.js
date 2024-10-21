@@ -1,6 +1,6 @@
 export const PORTFOLIO_METADATA = {
 	name: "Vladislav Karpovich",
-	position: "Full Stack Developer",
+	position: ".NET Developer",
 	country: "Belarus",
 	region: "Brest",
 	social: {
@@ -9,7 +9,7 @@ export const PORTFOLIO_METADATA = {
 		github: "https://github.com/qlminspire"
 	},
 	summary:
-		"Full-stack developer with over 6 years of experience. Skilled in .NET development, including Desktop, MVC, and Web APIs. Building a rich user interface using HTML, CSS, and React library",
+		"Developer with over 6 years of experience. Skilled in .NET development, including Desktop, MVC, and Web APIs. Building a rich user interface using HTML, CSS, and React library",
 	skills: [".NET", "C#", "Javascript", "HTML", "CSS", "React", "SQL", "Azure"],
 	languages: [
 		{ language: "English", level: "Intermediate" },
